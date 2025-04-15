@@ -34,3 +34,20 @@ body {
   #FooterEnd {
 background-color: #f17141;
   }
+
+@media (max-width: 768px) {
+  .music-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .sound-wave {
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .column-divider {
+    display: none; /* Optional: hides the divider on small screens */
+  }
+}
