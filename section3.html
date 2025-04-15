@@ -9,7 +9,6 @@
     body {
       background-color: #111;
       color: #f17141;
-      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       display: flex;
@@ -38,8 +37,15 @@
       font-weight: bold;
       margin-bottom: 30px;
       color: #f17141;
-      font-family: UAV OSD Mono;
+      font-family: 'UAVOSDMONO';
     }
+
+    @font-face {
+  font-family: 'UAVOSDMONO';  /* The name you'll use in CSS */
+  src: url('fonts/UAV-OSD-Mono.ttf') format('opentype');  /* Point to the .otf file */
+  font-weight: normal;
+  font-style: normal;
+}
 
     .divider {
       position: absolute;
@@ -65,7 +71,7 @@
       flex: 1 1 250px;
       padding: 10px;
       text-align: left;
-      font-family: UAV OSD Mono;
+      font-family: 'UAVOSDMONO';
     }
 
     .contents-list div {

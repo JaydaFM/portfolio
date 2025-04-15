@@ -20,11 +20,18 @@
             width: 100vw;  /* Full viewport width */
             text-align: center;  /* Center the text */
             font-size: 76px;  /* Adjust as needed */
-            font-family: UAV OSD Mono;
+            font-family: 'UAVOSDMONO';
             font-weight: bold;
             position: relative; /* Ensures it stays within normal flow */
             color: #f17141;
         }
+
+        @font-face {
+  font-family: 'UAVOSDMONO';  /* The name you'll use in CSS */
+  src: url('fonts/UAV-OSD-Mono.ttf') format('opentype');  /* Point to the .otf file */
+  font-weight: normal;
+  font-style: normal;
+}
 
         /* Container for images */
         .container {

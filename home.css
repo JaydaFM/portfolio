@@ -70,3 +70,57 @@ background-color: #f17141;
     padding: 10px 0;
   }
 }
+
+  @font-face {
+    font-family: "Fanky Bubble Graffiti Line";
+    src: url("fonts/FankyBubbleGraffiti-Line.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Howdy Handsome";
+    src: url("fonts/HowdyHandsome.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Old London";
+    src: url("fonts/OldLondon.ttf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Shavina Elegance";
+    src: url("fonts/Shavina\ Elegance.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Squealer";
+    src: url("fonts/squealer\ embossed.ttf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "UAV OSD Mono";
+    src: url("fonts/UAV-OSD-Mono.ttf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Varsity";
+    src: url("fonts/varsity_regular.ttf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Elegant";
+    src: url("fonts/ELEGANT\ \ Personal\ use.ttf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Monea Alegante";
+    src: url("fonts/Monea\ Alegante.otf") format("opentype");
+  }
+  
+  @font-face {
+    font-family: "Neue Haas Unica";
+    src: url("fonts/NeueHaasUnica-Light.ttf") format("opentype");
+  }
+  
+  /* Repeat this for all 10 fonts */
+  
+  
