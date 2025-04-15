@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Section</title>
+  <style>
+    body {
+      background-color: #f17141;
+      color: black;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .music-container {
+      display: flex;
+      flex-direction: row;
+      width: 1200px;
+      height: 200px;
+      background-color: #f17141;
+      padding: 20px;
+      position: relative;
+      margin-left: 280px;
+    }
+
+    .music-list {
+      flex: 1;
+      text-align: left;
+      padding-left: 10px;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .music-list div {
+      cursor: pointer;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .music-list div:hover {
+      color: #ffecae;
+    }
+
+    .song-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .artist-name {
+      font-size: 14px;
+      color: black;
+      margin-top: -15px;
+    }
+
+    .column-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 35%;
+      width: 2px;
+      background-color: black;
+
+    }
+
+    .sound-wave {
+      position: absolute;
+      top: 50%;
+      left: 27%; /* Start after the divider */
+      width: calc(100% - 25% - 20px); /* Take remaining space after the divider */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-50%);
+      gap: 5px;
+    }
+
+    .bar {
+      width: 9.7px;
+      height: 20px;
+      background-color: black;
+      margin: 0 3px;
+      display: inline-block;
+      animation: wave-animation 1s infinite ease-in-out;
+    }
+
+    @keyframes wave-animation {
+      0%, 100% { height: 20px; }
+      50% { height: 50px; }
+    }
+
+    /* Button styling */
+    .play-pause-btn {
+      font-size: 20px;
+      color: black;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      margin-left: 20px; /* Add space between the button and the sound bars */
+      display: none; /* Hide the button by default */
+    }
+
+    .play-pause-btn:hover {
+      color: #ffecae;
+    }
+  </style>
+</head>
+<body>
+  <div class="music-container">
+    <div class="music-list">
+      <div onclick="playMusic('song1.mp3')">
+        <p class="song-title">Set Adrift on Memory Bliss</p>
+        <p class="artist-name">P.M. Dawn</p>
+      </div>
+      <div onclick="playMusic('song2.mp3')">
+        <p class="song-title">Personal (Big Girls Remix)</p>
+        <p class="artist-name">Sean Kingston ft Fergie</p>
+      </div>
+      <div onclick="playMusic('song3.mp3')">
+        <p class="song-title">The Reason</p>
+        <p class="artist-name">Hoobastank</p>
+      </div>
+    </div>
+
+    <div class="column-divider"></div>
+
+    <div class="sound-wave" id="wave-container">
+      <!-- Play/Pause Button -->
+      <button class="play-pause-btn" id="play-pause-btn" onclick="toggleMusic()">Play</button>
+      <div class="bar" style="animation-delay: 0s;"></div>
+      <div class="bar" style="animation-delay: 0.1s;"></div>
+      <div class="bar" style="animation-delay: 0.5s;"></div>
+      <div class="bar" style="animation-delay: 0.3s;"></div>
+      <div class="bar" style="animation-delay: 0.3s;"></div>
+      <div class="bar" style="animation-delay: 0.8s;"></div>
+      <div class="bar" style="animation-delay: 0.6s;"></div>
+      <div class="bar" style="animation-delay: 0s;"></div>
+      <div class="bar" style="animation-delay: 0.9s;"></div>
+      <div class="bar" style="animation-delay: 0.2s;"></div>
+      <div class="bar" style="animation-delay: 0.4s;"></div>
+      <div class="bar" style="animation-delay: 0.4s;"></div>
+      <div class="bar" style="animation-delay: 0.8s;"></div>
+      <div class="bar" style="animation-delay: 0.6s;"></div>
+    </div>
+  </div>
+
+  <audio id="audio-player"></audio>
+
+  <script>
+    let isPlaying = false;
+    const audio = document.getElementById('audio-player');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+
+    // Show the play/pause button when a song is clicked
+    function playMusic(song) {
+      if (audio.src !== `Songs/${song}`) {
+        audio.src = `Songs/${song}`;
+        audio.play();
+        isPlaying = true;
+        updateButton();
+      } else {
+        audio.play();
+        isPlaying = true;
+        updateButton();
+      }
+      // Show the button once a song is clicked
+      playPauseBtn.style.display = 'block';
+    }
+
+    function stopMusic() {
+      audio.pause();
+      isPlaying = false;
+      updateButton();
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        audio.pause();  // Pause the music without resetting
+        isPlaying = false;
+        updateButton();
+      } else {
+        audio.play();  // Play the music from the current position
+        isPlaying = true;
+        updateButton();
+      }
+    }
+
+    function updateButton() {
+      if (isPlaying) {
+        playPauseBtn.textContent = 'Pause';
+      } else {
+        playPauseBtn.textContent = 'Play';
+      }
+    }
+  </script>
+</body>
+</html>

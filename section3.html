@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contents Page</title>
+  <style>
+    /* General body styles */
+    body {
+      background-color: #111;
+      color: #f17141;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container styles */
+    .contents-container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 80vh;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #ccff00;
+      position: relative;
+    }
+
+    /* Header styles */
+    .contents-header {
+      text-align: left;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #f17141;
+      font-family: UAV OSD Mono;
+    }
+
+    .divider {
+      position: absolute;
+      left: 0%;
+      top: 70px;
+      width: 100%;
+      height: 20px;
+      background-color: #f17141;
+      margin-bottom: 20px;
+      background: linear-gradient(to bottom, #f17141, rgba(241, 113, 65, 0)); /* Fade effect */
+    }
+
+    /* Body styles */
+    .contents-body {
+      display: flex;
+      flex-wrap: nowrap; /* Prevent wrapping */
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .contents-list {
+      flex: 1 1 250px;
+      padding: 10px;
+      text-align: left;
+      font-family: UAV OSD Mono;
+    }
+
+    .contents-list div {
+      cursor: pointer;
+      padding: 12px 0;
+      font-size: 14px;
+      transition: color 0.3s ease;
+      margin-bottom: -20px;
+      margin-top: 30px;
+    }
+
+   /* Right Column (displaying images) */
+    .works-display {
+      flex: 3 1 600px;
+      padding: 20px;
+      background-color: #ccff00;
+      position: relative;
+      overflow: hidden; /* Hide overflowed images */
+      display: flex;
+      justify-content: center; /* Center images horizontally */
+      margin-top: 70px;
+    }
+
+    .works-display img {
+      height: 400px; /* Set the image height to be the same */
+      object-fit: contain; /* Maintain the aspect ratio while scaling the width */
+      max-width: none; /* Prevent width from being stretched */
+      display: none; /* Initially hide all images */
+      transition: opacity 0.3s ease;
+    }
+
+    /* Left and Right Arrows */
+    .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: #f17141;
+  cursor: pointer;
+  z-index: 2;
+  display: none; /* Initially hide the arrows */
+}
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    /* Column Divider */
+    .column-divider {
+      position: absolute;
+      top: 70px;
+      bottom: 0;
+      left: 25%;
+      width: 20px;
+      background-color: #f17141;
+      background: linear-gradient(to right, #f17141, rgba(241, 113, 65, 0));
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .contents-body {
+        flex-direction: column; /* Stack sections vertically */
+      }
+
+      .contents-list {
+        text-align: center;
+        padding: 0;
+      }
+
+      .works-display {
+        width: 100%;
+        margin-top: 40px;
+      }
+
+      .column-divider {
+        display: none;
+      }
+
+      .contents-header {
+        font-size: 30px;
+      }
+
+      .contents-list div {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contents-header {
+        font-size: 24px;
+      }
+
+      .contents-list div {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contents-container">
+    <div class="contents-header">Works</div>
+    <div class="divider"></div>
+    <div class="contents-body">
+      <!-- Left Column -->
+      <div class="contents-list">
+        <div onclick="showWork('work1')">Porter James Sports</div>
+        <div onclick="showWork('work2')">YouKnow</div>
+        <div onclick="showWork('work3')">Bokeo</div>
+        <div onclick="showWork('work4')">Ugly Sweet</div>
+        <div onclick="showWork('work5')">Business Changing</div>
+        <div onclick="showWork('work6')">F & F</div>
+      </div>
+
+      <!-- Column Divider -->
+      <div class="column-divider"></div>
+
+      <!-- Right Column (displaying images) -->
+      <div class="works-display">
+        <div id="work1" class="work">
+          <img src="Illustrations/Howdy3-06.png" alt="Work 2">
+          <img src="Illustrations/Untitled_Artwork 11.jpg" alt="Work 1">
+          <img src="Illustrations/PJS/Untitled_Artwork 26.jpg" alt="Work 2">
+          <img src="Illustrations/IMG_0495.png" alt="Work 2">
+          <img src="Illustrations/Untitled_Artwork 12.jpg" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 10.jpg" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 20.png" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 8.jpg" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 22.jpg" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 29.png" alt="Work 2">
+          <img src="Illustrations/PJS/Untitled_Artwork 87.png" alt="Work 2">
+        </div>
+        <div id="work2" class="work">
+          <img src="Illustrations/YouKnow/IMG_6402.jpeg" alt="Work 3">
+          <img src="Illustrations/YouKnow/IMG_6403.jpeg" alt="Work 4">
+          <img src="Illustrations/YouKnow/IMG_6404.jpeg" alt="Work 3">
+          <img src="Illustrations/YouKnow/IMG_6405.png" alt="Work 4">
+          <img src="Illustrations/YouKnow/IMG_6406.jpeg" alt="Work 4">
+          <img src="Illustrations/YouKnow/IMG_6407.jpeg" alt="Work 3">
+          <img src="Illustrations/YouKnow/Untitled_Artwork 73.PNG" alt="Work 4">
+          <img src="Illustrations/YouKnow/Untitled_Artwork 72.PNG" alt="Work 3">
+        </div>
+        <div id="work3" class="work">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 14.png" alt="Work 6">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 32.jpg" alt="Work 5">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 16.jpg" alt="Work 6">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 15.jpg" alt="Work 5">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 28.jpg" alt="Work 6">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 14.jpg" alt="Work 5">
+          <img src="Illustrations/Bokeo/Untitled_Artwork 17.png" alt="Work 5">
+          <img src="Illustrations/Bokeo/BxSD2-02.jpg" alt="Work 6">
+          <img src="Illustrations/Bokeo/IMG_1820.jpeg" alt="Work 5">
+          <img src="Illustrations/Bokeo/The Shelter D1.png" alt="Work 6">
+        </div>
+        <div id="work4" class="work">
+          <img src="Illustrations/UglySweet/signmockup.png" alt="Work 7">
+          <img src="Illustrations/UglySweet/packageCandy.png" alt="Work 8">
+          <img src="Illustrations/UglySweet/packageBags.png" alt="Work 7">
+          <img src="Illustrations/UglySweet/box1.png" alt="Work 8">
+          <img src="Illustrations/UglySweet/PackageBoxes.png" alt="Work 8">
+          <img src="Illustrations/UglySweet/Untitled_Artwork 80 copy.png" alt="Work 7">
+          <img src="Illustrations/UglySweet/Untitled_Artwork 80 copy 2.png" alt="Work 8">
+          <img src="Illustrations/UglySweet/Untitled_Artwork 80 copy 4.png" alt="Work 7">
+          <img src="Illustrations/UglySweet/coconutwhite.png" alt="Work 8">
+          <img src="Illustrations/UglySweet/MockUP-13.png" alt="Work 7">
+          <img src="Illustrations/UglySweet/packageInside-1-08.png" alt="Work 8">
+        </div>
+        <div id="work5" class="work">
+          <img src="Illustrations/BChanging/Untitled_Artwork 76.png" alt="Work 10">
+          <img src="Illustrations/BChanging/Untitled_Artwork.PNG" alt="Work 9">
+          <img src="Illustrations/BChanging/Untitled_Artwork 82.PNG" alt="Work 10">
+          <img src="Illustrations/BChanging/Untitled_Artwork 77.png" alt="Work 9">
+          <img src="Illustrations/BChanging/Untitled_Artwork 75.png" alt="Work 9">
+          <img src="Illustrations/BChanging/Untitled_Artwork 73 copy.png" alt="Work 10">
+          <img src="Illustrations/BChanging/Untitled_Artwork 71 copy.png" alt="Work 9">
+          <img src="Illustrations/BChanging/Untitled_Artwork 68 copy.png" alt="Work 10">
+          <img src="Illustrations/BChanging/Untitled_Artwork 60.png" alt="Work 9">
+          <img src="Illustrations/BChanging/Untitled_Artwork 18.png" alt="Work 10">
+          <img src="Illustrations/BChanging/switch.png" alt="Work 10">
+          <img src="Illustrations/BChanging/0ioi.png" alt="Work 9">
+        </div>
+        <div id="work6" class="work">
+          <img src="Illustrations/FriendsAndFam/EstellePossumQueen.png" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/AcDt.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/bdayTennis-01.png" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/Untitled_Artwork 5.jpg" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/croissant.png" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/Mos.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/Untitled_Artwork 62.PNG" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/DAD.jpg" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/HANASMALL.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/Illustrations-15.png" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/IMG_0333.jpg" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/marshyhana.png" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/LynaV12025.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/Untitled_Artwork 6.jpg" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/RAFFLEV4.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/MetroJuniors.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/Untitled_Artwork 61.PNG" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/Sips Dad Sam Phot 1 terminator.png" alt="Work 12">
+          <img src="Illustrations/FriendsAndFam/Untitled_Artwork 64.PNG" alt="Work 11">
+          <img src="Illustrations/FriendsAndFam/restore.png" alt="Work 11">
+        </div>
+
+        <!-- Left and Right Arrows -->
+        <div class="arrow arrow-left" onclick="changeImage('prev')">&#9664;</div>
+        <div class="arrow arrow-right" onclick="changeImage('next')">&#9654;</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0; // To track the current image being shown
+
+function showWork(workId) {
+  // Hide all works
+  document.querySelectorAll('.work').forEach(work => {
+    work.style.display = 'none'; // Hide all works
+    work.classList.remove('active'); // Remove the 'active' class from all works
+  });
+  
+  // Show the selected work
+  const selectedWork = document.getElementById(workId);
+  selectedWork.style.display = 'block'; // Display the selected work
+  selectedWork.classList.add('active'); // Add the 'active' class to the selected work
+
+    // Show arrows once a project is selected
+  document.querySelector('.arrow-left').style.display = 'block';
+  document.querySelector('.arrow-right').style.display = 'block';
+
+  currentImageIndex = 0; // Reset to the first image of the selected work
+  updateImageDisplay(workId);
+}
+
+function changeImage(direction) {
+  const activeWork = document.querySelector('.work.active');
+  const images = activeWork.querySelectorAll('img');
+  
+  if (direction === 'next') {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+  } else {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  }
+
+  updateImageDisplay(activeWork.id);
+}
+
+function updateImageDisplay(workId) {
+  const activeWork = document.getElementById(workId);
+  const images = activeWork.querySelectorAll('img');
+  images.forEach((img, index) => {
+    img.style.display = (index === currentImageIndex) ? 'block' : 'none';
+  });
+}
+
+  </script>
+
+</body>
+</html>

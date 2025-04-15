@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Development</title>
+    <style>
+        /* Styling for Section 4 */
+        .section4 {
+            background-color: #ccff00;
+            height: 900px; /* Total height of the section */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Title */
+        .section-title {
+            width: 100vw;  /* Full viewport width */
+            text-align: center;  /* Center the text */
+            font-size: 76px;  /* Adjust as needed */
+            font-family: UAV OSD Mono;
+            font-weight: bold;
+            position: relative; /* Ensures it stays within normal flow */
+            color: #f17141;
+        }
+
+        /* Container for images */
+        .container {
+            display: flex;
+            gap: 30px; /* Space between the two images */
+            justify-content: center;
+            width: 90%;
+        }
+
+        /* Image Containers */
+        .image-container {
+            width: 45%; /* Adjust to fit the full width of PNGs */
+            height: 600px; /* EDIT THIS VALUE TO CONTROL IMAGE HEIGHT */
+            overflow: hidden;
+            border: 2px solid #f17141;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* Scrollable PNG Images */
+        .scrollable-image {
+            width: 100%;
+            display: block;
+            height: auto;
+            background-color: white;
+        }
+
+        /* Enable vertical scrolling inside the container */
+        .image-wrapper {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto; /* Allows scrolling only vertically */
+        }
+    </style>
+</head>
+<body>
+    <section class="section4">
+        <h1 class="section-title">Software Development</h1>
+        <div class="container">
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="DevWorks/PIITV2.png" alt="Web Design 1" class="scrollable-image">
+                </div>
+            </div>
+            <div class="image-container">
+                <div class="image-wrapper">
+                    <img src="DevWorks/PIITV1.png" alt="Web Design 2" class="scrollable-image">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

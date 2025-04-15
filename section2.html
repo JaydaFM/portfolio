@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seamless Image Panning</title>
+  <style>
+    /* Container to hold scrolling images */
+    #image-container {
+      overflow: hidden;
+      width: 100vw;  /* Full width of the screen */
+      height: 280px; /* Adjust height based on your images */
+      position: relative;
+      background: white;
+      white-space: nowrap; /* Prevent images from wrapping */
+    }
+
+    /* The moving strip with images */
+    .image-strip {
+      display: flex;
+      width: max-content;
+      animation: pan 20s linear infinite;
+    }
+
+    /* Ensure images stay in one line */
+    .image-strip img {
+      width: 300px; /* Adjust as needed */
+      height: 300px; /* Adjust as needed */
+      object-fit: cover;
+    }
+
+    /* Keyframe for seamless scrolling */
+    @keyframes pan {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); } /* Moves left by half its width */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="image-container">
+    <div class="image-strip">
+      <!-- Image set 1 -->
+      <img src="Illustrations/blacklabel.PNG" alt="Image 1">
+      <img src="Illustrations/Illustrations-02.png" alt="Image 2">
+      <img src="Illustrations/HANASMALL.png" alt="Image 3">
+      <img src="Illustrations/Howdy3-06.png" alt="Image 4">
+      <img src="Illustrations/IMG_6406.jpeg" alt="Image 5">
+      <img src="Illustrations/Mos.png" alt="Image 6">
+      <img src="Illustrations/Untitled_Artwork 12.jpg" alt="Image 7">
+      <img src="Illustrations/Untitled_Artwork 16.jpg" alt="Image 8">
+      <img src="Illustrations/Untitled_Artwork 73 copy.png" alt="Image 9">
+      <img src="Illustrations/Untitled_Artwork 11.jpg" alt="Image 10">
+      <img src="Illustrations/Untitled_Artwork 14.png" alt="Image 11">
+      <img src="Illustrations/Untitled_Artwork 74.png" alt="Image 12">
+      
+      <!-- Duplicate of Image set 1 for seamless looping -->
+      <img src="Illustrations/blacklabel.PNG" alt="Image 1">
+      <img src="Illustrations/Illustrations-02.png" alt="Image 2">
+      <img src="Illustrations/HANASMALL.png" alt="Image 3">
+      <img src="Illustrations/Howdy3-06.png" alt="Image 4">
+      <img src="Illustrations/IMG_6406.jpeg" alt="Image 5">
+      <img src="Illustrations/Mos.png" alt="Image 6">
+      <img src="Illustrations/Untitled_Artwork 12.jpg" alt="Image 7">
+      <img src="Illustrations/Untitled_Artwork 16.jpg" alt="Image 8">
+      <img src="Illustrations/Untitled_Artwork 73 copy.png" alt="Image 9">
+      <img src="Illustrations/Untitled_Artwork 11.jpg" alt="Image 10">
+      <img src="Illustrations/Untitled_Artwork 14.png" alt="Image 11">
+      <img src="Illustrations/Untitled_Artwork 74.png" alt="Image 12">
+    </div>
+  </div>
+</body>
+</html>

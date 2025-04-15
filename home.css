@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+  }
+
+  #container {
+    position: relative;
+    height: 85vh;
+    background-color: #f17141;
+  }
+
+  .falling-text {
+    position: absolute;
+    font-size: 40px;
+    color: #ffecae;
+    pointer-events: none; /* Prevent the falling text from interfering with clicks */
+  }
+
+  #sectionTwo {
+    background-color: #f17141;
+  }
+
+  #sectionThree {
+    background-color: #111;
+  }
+
+  #sectionFour {
+    background-color: #f17141;
+  }
+
+  #sectionFive {
+    background-color: black;
+  }
+
+  #FooterEnd {
+background-color: #f17141;
+  }
